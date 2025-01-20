@@ -114,19 +114,33 @@ In the `main.js` module, invoke the `PotteryList` component function. Take its r
 
 **THEN PUSH YOUR CODE TO GITHUB**
 
-
 ## Vocabulary and Understanding
 
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Explain how you got the HTML, with the correct data, displayed in the browser?
-   > Your answer here
+
+   > Step 1 was importing the toSellOrNotToSell function from the potterycatalog module. once that function was imported on to the potterylist module, I created a new function called potteryList with one parameter "pieces".
+
+   The purpose of the potteryList function is multifold, first it allows me to invoke toSellOrNotToSell using the parameter pieces whose value is then stored in a variable called piecesForList. Next, we declare another variable potteryListHTML that is equal to an empty string. Finally, the parameter piece is used alongside the .forEach method (same as a for loop) and piecesForList variable to iterate through the output of toSellOrNotToSell function. The iteration converts the items to the html string we are seeking, and stores the output in potteryListHTML.
+
+   Next, the potteryHTML parameter is used to invoke the renderListToDOM function, which essentially uses the .getElementByID method to find the "PotteryList" tag on the index.html file so we can insert the html string into the right location on the web page.
+
+   Both potteryList and renderListToDOM are exported to the main.js module where potteryList is invoked using the updatedPotteryItems array. The value of that is stored in the variable potteryHTML. potteryHTML then invokes renderListToDOM. Then the folder with the scripts is served on the terminal and the webpage is generated with the appropriate language/data. Screenshot of the output has been pasted into the code file.
+
 2. In the **PotteryList** module, when you iterate your pottery, you need to show the evidence of what the **weight** property's value is for the 2nd piece of pottery. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
-   > Paste your video's public URL here
+
+   > [Paste your video's public URL here](https://www.loom.com/share/75e5eb210c95424884e7299059d45319)
+
 3. The **PotteryWheel** module has a single function named `makePottery`. Why doesn't that module have all of the other code in it?
-   > Your answer here
+
+   > That module simply serves the purpose of creating the pottery object. It is cleaner to keep the code that creates the object separate from where the actual object is created.
+
 4. The pottery shop has learned that there is a set of customers that are willing to buy cracked pottery at a discounted price of $2.50. That means that the cracked pottery should now be displayed in the catalog. Explain the changes that this new business strategy would cause to your algorithm.
-   > Your answer here
+
+   > On the potterycatalog module, we would simply adjust the first component of the if statement that checks to see if a piece is cracked to state that if true, then price is $2.50. The rest of the conditional logic would be updated to state that else if weight is greater than 6, then price is 40, else price is 20.
+
 5. In the **Kiln** module, you have a `firePottery()` function. You need to demonstrate how to use the debugger to verify the values of the parameters for that function when your code runs. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
-   > Paste your video's public URL here
+   > [Paste your video's public URL here](https://www.loom.com/share/42bca1bbadc64ec9b1ce9e66cf56a129)
+
 # Hairy-Potter-gofigure000
